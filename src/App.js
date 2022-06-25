@@ -6,10 +6,10 @@ import {
 } from 'react-router-dom';
 
 /* Components & Assets */
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import Login from './components/Login';
+import Header from './pages/Header';
+import Footer from './pages/Footer';
+import Home from './pages/Home';
+import Login from './pages/Login';
 
 function App() {
   return (
