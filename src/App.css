@@ -9,6 +9,7 @@ body {
   --type-first: Helvetica, Arial, sans-serif;
   --type-second: 'Spectral', Georgia;
   font-family: var(--type-first);
+  padding-top: 4rem;
 }
 
 ul, li {
@@ -26,6 +27,8 @@ button {
   font-family: var(--type-first);
   color: #333;
 }
+
+a {   text-decoration: none; }
 
 .container {
   max-width: 50rem;

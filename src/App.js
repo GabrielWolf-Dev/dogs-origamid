@@ -5,7 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 
-/* Components */
+/* Components & Assets */
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -17,7 +17,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login/*" element={<Login />} />
       </Routes>
       <Footer />
     </BrowserRouter>
