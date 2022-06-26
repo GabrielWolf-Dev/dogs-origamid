@@ -1,33 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+/* Custom functions */
+import useForm from '../../../hooks/useForm';
+import { UserContext } from '../../../context/UserContext';
+
 /* Components & Assets */
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 
 function LoginForm() {
-  const [username, setUsername] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  
-  function handleSubmit(event) {
-    event.preventDefault();
-    const url = process.env.REACT_APP_URL_API;
+  const username = useForm();
+  const password = useForm();
+  const { userLogin } = React.useContext(UserContext);
 
-    fetch(`${url}jwt-auth/v1/token`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username, password })
-    })
-    .then(response => {
-      console.log(response);
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-      return data;
-    })
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    if(username.validate() && password.validate()) userLogin(username.value, password.value);
   }
   return (
     <section>
@@ -37,11 +27,13 @@ function LoginForm() {
           label="Usuário"
           type="text"
           name="username"
+          {...username}
         />
         <Input
           label="Senha"
           type="password"
           name="password"
+          {...password}
         />
 
         <Button type="submit">Enviar</Button>

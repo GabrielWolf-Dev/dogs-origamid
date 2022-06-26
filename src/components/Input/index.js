@@ -4,7 +4,11 @@ import styles from './styles.module.css';
 function Input({
   type,
   label,
-  name
+  name,
+  value,
+  error,
+  onChange,
+  onBlur
 }) {
   return (
     <div className={styles.wrapper}>
@@ -14,8 +18,11 @@ function Input({
         type={type}
         name={name}
         id={name}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       />
-      <p className={styles.error}>Error</p>
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   )
 }

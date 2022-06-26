@@ -5,6 +5,9 @@ import {
   Route
 } from 'react-router-dom';
 
+/* Custom functions */
+import { UserStorage } from './context/UserContext';
+
 /* Components & Assets */
 import Header from './pages/Header';
 import Footer from './pages/Footer';
@@ -14,12 +17,14 @@ import Login from './pages/Login';
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login/*" element={<Login />} />
-      </Routes>
-      <Footer />
+      <UserStorage>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login/*" element={<Login />} />
+        </Routes>
+        <Footer />
+      </UserStorage>
     </BrowserRouter>
   );
 }
