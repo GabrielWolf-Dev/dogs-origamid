@@ -12,7 +12,7 @@ import Button from '../../../components/Button';
 function LoginForm() {
   const username = useForm();
   const password = useForm();
-  const { userLogin } = React.useContext(UserContext);
+  const { userLogin, error, loading } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -35,8 +35,10 @@ function LoginForm() {
           name="password"
           {...password}
         />
-
-        <Button type="submit">Enviar</Button>
+        {loading
+        ? <Button disabled>Carregando...</Button>
+        : <Button type="submit">Enviar</Button>}
+        {error && <p>{error}</p>}
       </form>
       <Link to="/login/criar">Cadastro</Link>
     </section>
