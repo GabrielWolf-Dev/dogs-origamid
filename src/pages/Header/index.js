@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './style.module.css';
 
 /* Custom functions */
 import { UserContext } from '../../context/UserContext';
 
 /* Components & Assets */
 import { ReactComponent as Dogs } from '../../assets/dogs.svg';
+
+import styles from './style.module.css';
 
 function Header() {
   const { data, userLogout } = React.useContext(UserContext);
