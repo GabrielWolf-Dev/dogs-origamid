@@ -5,10 +5,10 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 
 /* Components & Assets */
-import LoginForm from './subcomponents/LoginForm';
-import LoginCreate from './subcomponents/LoginCreate';
-import LoginPasswdLost from './subcomponents/LoginPasswdLost';
-import LoginPasswdReset from './subcomponents/LoginPasswdReset';
+import LoginForm from './components/LoginForm';
+import LoginCreate from './components/LoginCreate';
+import LoginPasswdLost from './components/LoginPasswdLost';
+import LoginPasswdReset from './components/LoginPasswdReset';
 
 import styles from './style.module.css';
 

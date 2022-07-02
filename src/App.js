@@ -10,8 +10,8 @@ import { UserStorage } from './context/UserContext';
 import ProtectedRoute from './helper/ProtectedRoute';
 
 /* Components & Assets */
-import Header from './screens/Header';
-import Footer from './screens/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import User from './pages/User';
