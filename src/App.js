@@ -5,15 +5,17 @@ import {
   Route
 } from 'react-router-dom';
 
-/* Custom functions */
+/* Custom functions & Helpers */
 import { UserStorage } from './context/UserContext';
+import ProtectedRoute from './helper/ProtectedRoute';
 
 /* Components & Assets */
 import Header from './screens/Header';
 import Footer from './screens/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Account from './pages/Account';
+import User from './pages/User';
+
 
 function App() {
   return (
@@ -22,8 +24,15 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login/*" element={<Login />} />
-          <Route path="/conta" element={<Account />} />
+          <Route path="login/*" element={<Login />} />
+          <Route
+            path="conta/*" 
+            element={
+              <ProtectedRoute>
+                <User />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
         <Footer />
       </UserStorage>
