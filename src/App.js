@@ -9,8 +9,8 @@ import {
 import { UserStorage } from './context/UserContext';
 
 /* Components & Assets */
-import Header from './pages/Header';
-import Footer from './pages/Footer';
+import Header from './screens/Header';
+import Footer from './screens/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Account from './pages/Account';
