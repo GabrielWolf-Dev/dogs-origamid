@@ -1,0 +1,64 @@
+/* FeedPhotos */
+.feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-items: center;
+}
+
+/* FeedPhotosItem */
+.photo:nth-child(2) {
+  grid-column: 2 / 4;
+  grid-row: span 2;
+}
+
+.photo {
+  display: grid;
+  border-radius: .2rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.photo img {
+  grid-area: 1 / 1;
+}
+
+.visualization {
+  grid-area: 1 / 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.visualization::before {
+  content: "";
+  width: 16px;
+  height: 10px;
+  display: inline-block;
+  margin-right: .25rem;
+  background: url(../../assets/visualizacao.svg) no-repeat;
+}
+
+.photo:hover .visualization {
+  display: flex;
+}
+
+/* FeedModal */
+
+@media (max-width: 40rem) {
+  /* FeedPhotos */
+  .feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FeedPhotosItem */
+  .photo {
+    grid-column: initial;
+    grid-row: initial;
+  }
+}

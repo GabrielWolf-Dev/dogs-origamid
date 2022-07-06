@@ -1,8 +1,13 @@
 import React from 'react';
 
+/* Components & Assets */
+import Feed from '../../components/Feed';
+
 function Home() {
   return (
-    <div>Home</div>
+    <section className='container mainContainer'>
+      <Feed />
+    </section>
   )
 }
 
