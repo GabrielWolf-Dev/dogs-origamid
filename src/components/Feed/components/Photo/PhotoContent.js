@@ -7,6 +7,7 @@ import { UserContext } from '../../../../context/UserContext';
 /* Components & Assets */
 import PhotoComments from './PhotoComments';
 import PhotoDelete from './PhotoDelete';
+import Image from '../../../../helper/Image';
 
 import styles from './style.module.css';
 
@@ -17,7 +18,7 @@ function PhotoContent({ data }) {
   return (
     <div className={styles.photo}>
       <div className={styles.img}>
-        <img
+        <Image 
           src={photo.src}
           alt={photo.title}
         />
