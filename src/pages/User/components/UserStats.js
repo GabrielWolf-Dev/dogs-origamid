@@ -1,8 +1,17 @@
 import React from 'react';
 
+/* Components & Assets */
+import Head from '../../../helper/Head';
+
 function UserStats() {
   return (
-    <div>userStats</div>
+    <>
+      <Head
+        title="Estatísticas"
+        description="Home do site Dogs, com o feed de fotos."
+      />
+      <div>Estatísticas</div>
+    </>
   )
 }
 

@@ -10,6 +10,7 @@ import useFetch from '../../../hooks/useFetch';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import Error from '../../../components/Error';
+import Head from '../../../helper/Head';
 
 function LoginCreate() {
   const username = useForm();
@@ -32,6 +33,10 @@ function LoginCreate() {
 
   return (
     <section className="animeLeft">
+      <Head
+        title="Crie a sua conta"
+        description="Home do site Dogs, com o feed de fotos."
+      />
       <h1 className="title">Cadastre-se</h1>
 
       <form onSubmit={handleSubmit}>

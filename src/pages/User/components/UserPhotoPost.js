@@ -10,6 +10,7 @@ import { PHOTO_POST } from '../../../api';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import Error from '../../../components/Error';
+import Head from '../../../helper/Head';
 
 import styles from '../style.module.css';
 
@@ -53,6 +54,10 @@ function UserPhotoPost() {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head
+        title="Poste sua foto"
+        description="Home do site Dogs, com o feed de fotos."
+      />
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />

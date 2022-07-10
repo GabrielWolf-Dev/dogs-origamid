@@ -12,6 +12,7 @@ import Error from '../../../components/Error';
 
 import styles from '../style.module.css';
 import stylesBtn from '../../../components/Button/styles.module.css';
+import Head from '../../../helper/Head';
 
 function LoginForm() {
   const username = useForm();
@@ -25,6 +26,10 @@ function LoginForm() {
   }
   return (
     <section className="animeLeft">
+      <Head
+        title="Login"
+        description="Home do site Dogs, com o feed de fotos."
+      />
       <h1 className="title">Login</h1>
       <form
         className={styles.form}

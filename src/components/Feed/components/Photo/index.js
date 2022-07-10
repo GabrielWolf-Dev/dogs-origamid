@@ -9,6 +9,7 @@ import { PHOTO_GET } from '../../../../api';
 import Error from '../../../Error';
 import Loading from '../../../../helper/Loading';
 import PhotoContent from '../../../../components/Feed/components/Photo/PhotoContent';
+import Head from '../../../../helper/Head';
 
 function Photo() {
   const { id } = useParams();
@@ -23,6 +24,10 @@ function Photo() {
   if(loading) return <Loading />
   if(data) return (
     <section className={`container mainContainer`}>
+      <Head
+        title={data.photo.title}
+        description="Home do site Dogs, com o feed de fotos."
+      />
       <PhotoContent data={data} single={true} />
     </section>
   )
