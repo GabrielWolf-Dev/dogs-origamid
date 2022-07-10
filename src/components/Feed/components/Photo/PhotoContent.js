@@ -11,12 +11,17 @@ import Image from '../../../../helper/Image';
 
 import styles from './style.module.css';
 
-function PhotoContent({ data }) {
+function PhotoContent({ data, single }) {
   const user = React.useContext(UserContext);
   const { photo, comments } = data;
 
   return (
-    <div className={styles.photo}>
+    <div 
+    className={`
+        ${styles.photo} 
+        ${single ? styles.photoSingle : ''}
+      `}
+    >
       <div className={styles.img}>
         <Image 
           src={photo.src}
@@ -42,7 +47,11 @@ function PhotoContent({ data }) {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoComments
+        id={photo.id}
+        comments={comments}
+        single={single}
+      />
     </div>
   )
 }

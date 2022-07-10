@@ -15,7 +15,9 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import User from './pages/User';
-
+import Photo from './components/Feed/components/Photo';
+import UserProfile from './pages/User/components/UserProfile';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -33,6 +35,9 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="foto/:id" element={<Photo />} />
+          <Route path="perfil/:user" element={<UserProfile />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </UserStorage>

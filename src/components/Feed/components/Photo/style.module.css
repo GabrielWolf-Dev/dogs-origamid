@@ -13,6 +13,11 @@
   animation: scaleUp .3s forwards;
 }
 
+.photoSingle {
+  grid-template-columns: 1fr;
+  height: auto;
+}
+
 @keyframes scaleUp {
   to {
     opacity: initial;
@@ -24,12 +29,22 @@
   padding: 2rem 2rem 0 2rem;
 }
 
+.photoSingle .details {
+  padding: 1rem 0 0 0;
+}
+
 .img {
   grid-row: 1 / 4;
 }
 
+.photoSingle .img {
+  grid-row: 1;
+  border-radius: .4rem;
+  overflow: hidden;
+}
+
 .comments {
-  padding: 0 2rem;
+  padding: 2rem;
 }
 
 .author {
@@ -83,6 +98,10 @@
   word-break: break-word;
 }
 
+.photoSingle.comments {
+  padding: 0;
+}
+
 .comments li {
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -94,6 +113,10 @@
   grid-template-columns: 1fr auto;
   align-items: stretch;
   margin: 1rem;
+}
+
+.photoSingle.form {
+  margin: 1rem 0;
 }
 
 .textarea {

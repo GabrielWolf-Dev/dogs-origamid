@@ -19,7 +19,13 @@ function PhotoComments(props) {
 
   return (
     <>
-      <ul className={styles.comment} ref={commentsSection}>
+      <ul 
+        className={`
+          ${styles.comments}
+          ${props.single ? styles.photoSingle : ''}
+        `} 
+        ref={commentsSection}
+      >
         {
           comments.map(comment => (
             <li key={comment.comment_ID}>
@@ -29,7 +35,7 @@ function PhotoComments(props) {
           ))
         }
       </ul>
-      {login && <PhotoCommentsForm id={props.id}  setComments={setComments}/>}
+      {login && <PhotoCommentsForm single={props.single} id={props.id}  setComments={setComments}/>}
     </>
   )
 }
