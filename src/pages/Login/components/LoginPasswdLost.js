@@ -29,7 +29,7 @@ function LoginPasswdLost() {
   }
 
   return (
-    <section>
+    <section className='animeLeft'>
       <Head
         title="Perdeu a senha"
         description="Home do site Dogs, com o feed de fotos."

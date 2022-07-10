@@ -50,7 +50,7 @@ function LoginForm() {
         {loading
         ? <Button disabled>Carregando...</Button>
         : <Button type="submit">Enviar</Button>}
-        <Error error={error} />
+        <Error error={error && 'Dados incorretos'} />
       </form>
       <Link
         className={styles.perdeu}
